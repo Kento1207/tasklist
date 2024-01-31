@@ -14,9 +14,13 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-        name = "getAllTask",
-        query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
-    )
+            name = "getAllTask",
+            query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
+            ),
+    @NamedQuery(
+            name = "getTaskCount",
+            query = "SELECT COUNT(m) FROM Task AS m"
+            )
 })
 @Table(name = "task")
 public class Task {
@@ -66,8 +70,8 @@ public class Task {
         this.updated_at = updated_at;
     }
 
-	public void setTitle(String title) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
+    public void setTitle(String title) {
+        // TODO 自動生成されたメソッド・スタブ
+
+    }
 }
